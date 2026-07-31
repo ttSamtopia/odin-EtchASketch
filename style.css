@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 1000px;
+    height: 1000px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex: 1 1 0;
+    gap: 2px;
+}
+
+.square {
+    flex: 1 1 0;
+    background-color: red;
+}
