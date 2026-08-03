@@ -1,6 +1,9 @@
 const CONTAINER = document.querySelector("#container");
+const BUTTON = document.querySelector("button");
 
 function createGrid (gridSize = 16) {
+    CONTAINER.innerHTML = "";
+
     for (let row = 0; row < gridSize; row++) {
         let rowDiv = document.createElement("div");
         rowDiv.classList.add("row");
@@ -22,5 +25,11 @@ function createGrid (gridSize = 16) {
         CONTAINER.appendChild(rowDiv);
     }
 }
-
 createGrid()
+
+BUTTON.addEventListener("click", (e) => {
+    let gridSize = parseInt(prompt("How big do you want the grid to be? (1 - 100)"));
+    if (gridSize < 1) alert("Size is too small");
+    else if (gridSize > 100) alert("Size is too big");
+    else createGrid(gridSize);
+})
